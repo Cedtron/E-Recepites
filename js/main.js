@@ -36,13 +36,15 @@ function toWords(n) {
 
         var nam=document.getElementById("received").value;
         var pay=document.getElementById("payment").value;
-        var amount=document.getElementById("amount").value;
+        var amounts=document.getElementById("amount").value;
+        var amount=Number(amounts)
         var bala=document.getElementById("bal").value;
      let word = translator.toWords(amount);
       
-              document.getElementById("name").innerHTML=`<b>Received From :</b> ${nam}`;
+              document.getElementById("name").innerHTML=`<b>Received Date :</b>${nam}`;
               document.getElementById("service").innerHTML=`<b>Payment :</b>  ${pay}`;
               document.getElementById("amount").innerHTML=`<b>Amount :</b> ${amount}`;
+              document.getElementById("amounts").innerHTML=`<b>Amount in cash:</b> ${amounts}`;
               document.getElementById("bala").innerHTML=`<b>Balance :</b> ${bala}`;
               document.getElementById("words").innerHTML=`<b>Amount in words :</b> ${word} shillings`;
               document.getElementById("dates").innerHTML=`<b>Received From :</b> ${today}`;
@@ -53,13 +55,13 @@ $(document).ready(function(){
 
     var doc = new jsPDF();
     var specialElementHandlers = {
-        '#view': function (element, renderer) {
+        '#receipt': function (element, renderer) {
             return true;
         }
     };
     
     $('#pdfs').click(function () {
-        doc.fromHTML($('#receipt').html(), 15, 15, {
+        doc.fromHTML($('#view').html(), 15, 15, {
             'width': 170,
                 'elementHandlers': specialElementHandlers
         });
