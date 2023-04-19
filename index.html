@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=`, initial-scale=1.0">
+    <title>Recepites</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link href="css/main.css" rel="stylesheet" />
+</head>
+<body>
+    
+<div class="container">
+<div class="row">
+<div class="col-md-4">
+
+    <div class="form text-center">
+       
+          <img class="mb-4" src="img/cedo.png" alt="" width="72" height="72"/>
+          <h1 class="h3 mb-3 fw-normal">Online Cash Recepites</h1>
+      
+          <div class="form-floating">
+            <input type="text" class="form-control" id="received"/>
+            <label for="received">Received from</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="payment"/>
+            <label for="payment">Being payment</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="amount"/>
+            <label for="amount">Amount</label>
+          </div>
+          <div class="form-floating">
+            <input type="text" class="form-control" id="bal"/>
+            <label for="bal">Balance</label>
+          </div>
+         
+      
+          <button class="w-100 btn btn-lg btn-primary" onClick="veiw()">View</button>
+         
+      
+      </main>
+
+</div>
+</div>
+
+
+<div class="col-md-6">
+
+<div class="main" id="receipt">
+    <div class="header">
+    <div class="title"><img class="mb-4" src="img/cedo.png" alt="" width="72" height="72"/> CEDO DEVELOPER</div>
+<em>Tel: 0772728459 / 0709047023 <br/>  Email:cedricallan16@gmail.com </em><hr/>
+    <h2 class="text-center head">E-Receipt</h2>
+</div> 
+<b>Received Date :</b><em id="dates"></em><br/>
+<div id="name"></div><br/>
+<div id="service"></div><br/>
+<div id="amount"></div><br/>
+<div id="words"></div><br/>
+<div id="bala"></div><br/>
+</div>
+<button class="w-100 btn btn-lg btn-primary" id="pdfs">Download PDF</button>
+
+<div id="view"></div>
+</div>
+</div>
+</div>
+
+    <script src="js/bootstrap.min.js"></script>
+     <script src="js/jquery.js"></script>
+     <script src="
+    js/number.js"></script>
+     <script src="js/jspdf.min.js"></script>
+       <script src="js/main.js"></script>
+</body>
+</html>
