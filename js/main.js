@@ -47,25 +47,31 @@ function toWords(n) {
               document.getElementById("amounts").innerHTML=`<b>Amount in cash:</b> ${amounts}`;
               document.getElementById("bala").innerHTML=`<b>Balance :</b> ${bala}`;
               document.getElementById("words").innerHTML=`<b>Amount in words :</b> ${word} shillings`;
-              document.getElementById("dates").innerHTML=`<b>Received From :</b> ${today}`;
+              document.getElementById("dates").innerHTML=`<b>Received On :</b> ${today}`;
              
         }
+
+
+
+// Create a new jsPDF instance
+var doc = new jsPDF();
+
+
+
 
 $(document).ready(function(){
 
     var doc = new jsPDF();
-    var specialElementHandlers = {
-        '#receipt': function (element, renderer) {
-            return true;
-        }
-    };
+   var divContents = document.getElementById("receipt").innerHTML;
+ 
     
     $('#pdfs').click(function () {
-        doc.fromHTML($('#view').html(), 15, 15, {
-            'width': 170,
-                'elementHandlers': specialElementHandlers
-        });
-        doc.save('Receipt.pdf');
+        doc.html(divContents, {
+    callback: function () {
+        // Save the PDF to the user's device
+        doc.save("myDiv.pdf");
+    }
+});
     });
 
 })
