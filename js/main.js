@@ -57,8 +57,6 @@ function toWords(n) {
 
 
 
-
-
 $(document).ready(function(){
 
     var element = $("#receipt");
@@ -74,7 +72,7 @@ $(document).ready(function(){
         var totalPDFpages = Math.ceil(HTML_height / PDF_height)-1;
         
         html2canvas(element[0]).then(function(canvas){
-            var imgData= canvas.toDataURL("image/jpeg", 2.0);
+            var imgData= canvas.toDataURL("image/jpeg", 1.0); // set quality to 1.0
             var pdf=new jsPDF('p','pt',[PDF_width,PDF_height]);
             pdf.addImage(imgData,'jpg',top_left_margin,top_left_margin,canvas_image_width,canvas_image_height);
             for(var i =1;i<= totalPDFpages; i++){
@@ -83,8 +81,6 @@ $(document).ready(function(){
             }
             pdf.save('rec.pdf');
             element.hide();
-            });
-        })
-
-
+        });
+    })
 })
