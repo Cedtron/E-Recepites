@@ -54,24 +54,37 @@ function toWords(n) {
 
 
 // Create a new jsPDF instance
-var doc = new jsPDF();
+
 
 
 
 
 $(document).ready(function(){
 
-    var doc = new jsPDF();
-   var divContents = document.getElementById("receipt").innerHTML;
- 
-    
-    $('#pdfs').click(function () {
-        doc.html(divContents, {
-    callback: function () {
-        // Save the PDF to the user's device
-        doc.save("myDiv.pdf");
-    }
-});
-    });
+    var element = $("#receipt");
+    $('#pdfs').click(function(){
+        var HTML_width =element.width();
+        var HTML_height =element.height();
+        var top_left_margin=15;
+        var PDF_width= HTML_width +(top_left_margin*2);
+        var PDF_height=(PDF_width*1.5)+(top_left_margin*2);
+        var canvas_image_width=HTML_width;
+        var canvas_image_height=HTML_height;
+        
+        var totalPDFpages = Math.ceil(HTML_height / PDF_height)-1;
+        
+        html2canvas(element[0]).then(function(canvas){
+            var imgData= canvas.toDataURL("image/jpeg", 2.0);
+            var pdf=new jsPDF('p','pt',[PDF_width,PDF_height]);
+            pdf.addImage(imgData,'jpg',top_left_margin,top_left_margin,canvas_image_width,canvas_image_height);
+            for(var i =1;i<= totalPDFpages; i++){
+                pdf.addPage(PDF_width,PDF_height);
+                pdf.addImage(imgData,'JPG',top_left_margin,-(PDF_height*i)+(top_left_margin*4),canvas_image_width,canvas_image_height);
+            }
+            pdf.save('rec.pdf');
+            element.hide();
+            });
+        })
+
 
 })
