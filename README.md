@@ -12,6 +12,8 @@ This is asimple site that i have ceated to easy Recepits making and downloads it
 
 Then click veiw button, andview  your Recepits before downloading it.
 Then click download,it saved in pdf format. 
+
+
 #Packages Used
 -Html2canvas: for converting div to pdf and download.
 -Js2pdf: for converting div to pdf and download
