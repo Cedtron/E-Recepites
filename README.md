@@ -15,6 +15,9 @@ Then click download,it saved in pdf format.
 
 
 #Packages Used
+
 -Html2canvas: for converting div to pdf and download.
--Js2pdf: for converting div to pdf and download
--Numbers :for writing numbers in words
+
+-Js2pdf: for converting div to pdf and download. 
+
+-Numbers :for writing numbers in words.
