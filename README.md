@@ -1,6 +1,6 @@
 #E-Recepits
 
-This is asimple site that i have ceated to easy Recepits making and downloads it in to pdf. Its just simple.
+This is asimple site that i have ceated to easy Recepits making and downloads it in to pdf. Its just simple✅.
 
 1.Input yur name or organistion.
 
@@ -14,7 +14,7 @@ Then click veiw button, andview  your Recepits before downloading it.
 Then click download,it saved in pdf format. 
 
 
-#Packages Used
+#Packages📦📦 Used
 
 -Html2canvas: for converting div to pdf and download.
 
