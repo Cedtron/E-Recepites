@@ -21,3 +21,6 @@ Then click download,it saved in pdf format.
 -Js2pdf: for converting div to pdf and download. 
 
 -Numbers :for writing numbers in words.
+
+
+Quick link https://cedtron.github.io/E-Recepites/
